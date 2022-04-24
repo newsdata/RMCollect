@@ -1,0 +1,15 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'RmCollect_Example' do
+  pod 'RmCollect', :path => '../'
+  
+  pod 'RMBaseSDK', :path => '/Users/shichangshun/Desktop/framework/RMBaseSDK'
+
+  target 'RmCollect_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
