@@ -7,6 +7,7 @@
 //
 
 #import "RMViewController.h"
+#import <RMCollect/RMCollect.h>
 
 @interface RMViewController ()
 
@@ -18,12 +19,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [RMCollect initWithToken:@"xxx"];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [RMCollect topicListPage:YES isPush:NO];
 }
 
 @end

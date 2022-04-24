@@ -3,13 +3,16 @@ use_frameworks!
 platform :ios, '9.0'
 
 target 'RmCollect_Example' do
-  pod 'RmCollect', :path => '../'
-  
-  pod 'RMBaseSDK', :path => '/Users/shichangshun/Desktop/framework/RMBaseSDK'
-
-  target 'RmCollect_Tests' do
-    inherit! :search_paths
-
+  pod 'RMCollect', :path => '../'
     
+end
+
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+
+    target.build_configurations.each do |config|
+      config.build_settings['ENABLE_BITCODE'] = 'NO'
+    end
   end
 end
